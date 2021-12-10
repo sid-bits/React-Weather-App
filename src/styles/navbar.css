@@ -1,0 +1,17 @@
+.navbar {
+  background-color: rgb(193, 238, 255);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search {
+  /* background-color: rgb(193, 238, 255); */
+  max-width: 10rem;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
+}
