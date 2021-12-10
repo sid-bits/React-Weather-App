@@ -2,7 +2,8 @@ import axios from "axios";
 
 // Action Type
 // const GET_WEATHER_DATA = "weather/GET_WEATHER_DATA";
-const GET_CITY = "weather/GET_CITY";
+// const GET_CITY = "weather/GET_CITY";
+const GET_CITY = "GET_CITY";
 
 // Action
 // export const getWeatherData = () => {
@@ -22,30 +23,34 @@ const GET_CITY = "weather/GET_CITY";
 //   };
 // };
 
-export const getCity = (city) => {
-  console.log("City is: " + city);
+export function getCity(city) {
+  // console.log("hereeeeeeeee");
+  // console.log("City is: " + city);
   return {
     type: GET_CITY,
     payload: city,
   };
-};
+}
+
+// export const getCity = (city) => {
+//   // console.log("hereeeeeeeee");
+//   // console.log("City is: " + city);
+//   return {
+//     type: GET_CITY,
+//     payload: city,
+//   };
+// };
 
 // Reducer
-export default function reducer(
-  state = {
-    city: "Paris",
-    // weatherData: {},
-  },
-  action
-) {
-  switch (action.type) {
-    // case GET_WEATHER_DATA: {
-    //   return {
-    //     ...state,
-    //     weatherData: action.payload,
-    //   };
-    // }
+const initialState = {
+  city: "LA",
+};
 
+export default function reducer(state = initialState, action) {
+  console.log("Action is: " + action);
+
+  switch (action.type) {
+    // Do something here based on the different types of actions
     case GET_CITY: {
       return {
         ...state,
@@ -54,6 +59,9 @@ export default function reducer(
     }
 
     default:
+      // If this reducer doesn't recognize the action type, or doesn't
+      // care about this specific action, return the existing state unchanged
+      console.log("Okayyyyy");
       return state;
   }
 }

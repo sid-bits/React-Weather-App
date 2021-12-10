@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/navbar.css";
 import getCity from "../store/weather";
 import { useDispatch } from "react-redux";
@@ -10,8 +10,11 @@ export default function Navbar() {
   const search = (e) => {
     if (e.code === "Enter" && searchCity != null) {
       console.log(searchCity);
-      // dispatch(getCity(searchCity));
-      dispatch(getCity(true));
+
+      console.log(getCity);
+
+      dispatch(getCity(searchCity));
+      // dispatch(getCity(true));
     }
   };
 
